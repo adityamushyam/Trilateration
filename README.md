@@ -9,4 +9,4 @@ Range generator: Generates random ranging data for te receivers at the corners o
 
 Position processor: Receives the random raning data and process the data to estiamt ethe curent position of the sensor on the field 
 
-Visulization notebook is for data analysis and plotting the results. 
+Visualization notebook is for data analysis and plotting the results. 
