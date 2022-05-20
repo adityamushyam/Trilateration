@@ -14139,6 +14139,14 @@ a.anchor-link {
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;err_rms=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">err_rms</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Positional accuracy=&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">err_pos</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+
+<span class="n">err_max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">err_pos</span><span class="p">[:])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error maximum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">err_max</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">err_min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">err_pos</span><span class="p">[:])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error minimum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">err_min</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14165,6 +14173,8 @@ erry_rms= 0.04
 err_mean= 0.04
 err_rms= 0.05
 Positional accuracy= 100.0 %
+error maximum= 0.15
+error minimum= 0.0
 </pre>
 </div>
 </div>
