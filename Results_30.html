@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Visualization_30</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Results_30</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -13971,7 +13971,7 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Position-processor-data-analysis-and-visualization-1800sec">Position processor data analysis and visualization 1800sec<a class="anchor-link" href="#Position-processor-data-analysis-and-visualization-1800sec">&#182;</a></h2>
+<h2 id="Position-processor-data-analysis-and-visualization-1800-sec">Position processor data analysis and visualization 1800 sec<a class="anchor-link" href="#Position-processor-data-analysis-and-visualization-1800-sec">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14139,6 +14139,14 @@ a.anchor-link {
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;err_rms=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">err_rms</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Positional accuracy=&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">err_pos</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+
+<span class="n">err_max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">err_pos</span><span class="p">[:])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error maximum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">err_max</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">err_min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">err_pos</span><span class="p">[:])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error minimum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">err_min</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14165,6 +14173,8 @@ erry_rms= 0.04
 err_mean= 0.04
 err_rms= 0.05
 Positional accuracy= 100.0 %
+error maximum= 0.16
+error minimum= 0.0
 </pre>
 </div>
 </div>
@@ -14291,7 +14301,7 @@ Positional accuracy= 100.0 %
 
 <span class="n">err_vel</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
-<span class="n">err_vel</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">vel</span><span class="p">[:]</span><span class="o">-</span><span class="n">vep</span><span class="p">[:])</span>
+<span class="n">err_vel</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">vel</span><span class="o">-</span><span class="n">vep</span><span class="p">)</span>
 <span class="c1">#print(err_pos)</span>
 
 <span class="n">errv_mean</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">err_vel</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
@@ -14299,6 +14309,14 @@ Positional accuracy= 100.0 %
 
 <span class="n">errv_rms</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">err_vel</span><span class="p">[:]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;errv_rms=&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">errv_rms</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">errv_max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">err_vel</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error velocity maximum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">errv_max</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">errv_min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">err_vel</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error velocity  minimum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">errv_min</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14320,6 +14338,8 @@ Positional accuracy= 100.0 %
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>errv_mean= 0.04
 errv_rms= 0.05
+error velocity maximum= 0.21
+error velocity  minimum= 0.0
 </pre>
 </div>
 </div>
