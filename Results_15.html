@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Visualization_15</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Results_15</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14301,7 +14301,7 @@ error minimum= 0.0
 
 <span class="n">err_vel</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
-<span class="n">err_vel</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">vel</span><span class="p">[:]</span><span class="o">-</span><span class="n">vep</span><span class="p">[:])</span>
+<span class="n">err_vel</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">vel</span><span class="o">-</span><span class="n">vep</span><span class="p">)</span>
 <span class="c1">#print(err_pos)</span>
 
 <span class="n">errv_mean</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">err_vel</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
@@ -14309,6 +14309,14 @@ error minimum= 0.0
 
 <span class="n">errv_rms</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">err_vel</span><span class="p">[:]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;errv_rms=&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">errv_rms</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">errv_max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">err_vel</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error velocity maximum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">errv_max</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">errv_min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">err_vel</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error velocity  minimum=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">errv_min</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14330,6 +14338,8 @@ error minimum= 0.0
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>errv_mean= 0.04
 errv_rms= 0.05
+error velocity maximum= 0.18
+error velocity  minimum= 0.0
 </pre>
 </div>
 </div>
